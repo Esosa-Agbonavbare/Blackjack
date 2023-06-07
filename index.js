@@ -1,13 +1,13 @@
-let message, sum, cards, isAlive, hasBlackJack, disp, cardsEl, total, playerEl, player;
+let message, sum, cards, isAlive, hasBlackJack, player;
 message = "";
 sum = 0;
 cards = [];
 isAlive = false;
 hasBlackJack = false;
-disp = document.getElementById("display");
-cardsEl = document.getElementById("cards");
-total = document.getElementById("total");
-playerEl = document.getElementById("player-info");
+const disp = document.getElementById("display");
+const cardsEl = document.getElementById("cards");
+const total = document.getElementById("total");
+const playerEl = document.getElementById("player-info");
 player = {
     name: "Player", 
     chips: 500
@@ -26,10 +26,9 @@ function getRandomCards() {
 }
 
 function dealCards() {
-    let firstCard, secondCard;
     isAlive = true;
-    firstCard = getRandomCards();
-    secondCard = getRandomCards();
+    const firstCard = getRandomCards();
+    const secondCard = getRandomCards();
     sum = firstCard + secondCard;
     cards = [firstCard, secondCard]
     renderGame();
